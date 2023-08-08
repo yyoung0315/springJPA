@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<div align="center">
+		<h1>목록보기</h1>
+		<br>
+		<table border=1 width="650" height="200">
+			<tr align="center">
+				<th th:text="SEQ" />
+				<th th:text="TITLE" />
+				<th th:text="WRITER" />
+				<th th:text="CreateDate" />
+				<th th:text="cnt" />
+			</tr>
+			<tr th:each="m : ${li} ">
+				<td align="center" th:text="${m.seq}" ></td>
+				<td align="center"><a th:href="@{/guest/getBoard.do(seq=${m.seq})}" th:text="${m.title}" ></a></td>
+				<td align="center" th:text="${m.writer}" ></td>
+				<td align="center" th:text="${m.CreateDate}"></td>
+				<td align="center" th:text="${m.cnt}"></td>
+			</tr>
+
+		</table>
+	</div>
+</body>
+
+</html>
